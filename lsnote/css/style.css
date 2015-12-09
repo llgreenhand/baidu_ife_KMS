@@ -1,0 +1,156 @@
+* {
+	padding: 0;
+	margin: 0;
+	color: #616161;
+	font: 16px "Helvetica", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
+}
+
+li { list-style: none; }
+img { border: none; } 
+a { 
+	color: black; 
+	text-decoration: none; }
+} 
+a:hover { text-decoration: underline; }
+
+body {
+	background-color: #eeeeee;
+	width: 100%;
+	height: 100%; 
+	overflow: hidden;
+}
+
+#left, #center {
+	float: left;
+	margin-right: 10px; 
+	height: 100%
+}
+
+#right {
+	overflow: hidden;
+	height: 100%
+}
+
+#left {
+	width: 190px;
+	background-color: black;
+}
+
+#left h1 {
+	font-size: 2em;
+	text-align: center;
+	margin-top: 64px;
+	line-height: 42px;
+}
+
+#left .menu {
+	margin: 74px 16px 12px 0;
+	height: 27px;
+}
+
+.menu img {
+	float: right;
+}
+
+#left ul {
+	color: white;
+}
+
+#left li {
+	line-height: 32px;
+	padding-left: 30px;
+	cursor: pointer;
+}
+
+#left li:hover {
+	background-color: #303030;
+	color: white;
+} 
+
+#center {
+	width: 385px;
+	background-color: white;
+	position: relative;
+}
+
+#center h1 {
+	font-size: 2em;	
+	color: #c3c3c3;
+	margin: 64px 0 0 8px;
+	line-height: 42px;
+}
+
+#center .newadd {
+	position: absolute;
+	top: 67px;
+	right: 10px;
+	float: right;
+	height: 36px;
+	width: 130px;
+	background: url(../images/newicon.png) no-repeat top left;
+}
+
+#center .newadd img {
+	position: absolute;
+	top: 7px;
+	left: 16px;
+	background: url(../images/writeicon.png) no-repeat top left; 
+}
+
+#center .newadd span {
+	position: absolute;
+	top: 7px;
+	right: 20px;
+	color: white;
+}
+
+#center .notepart {
+	width: 366px;
+	margin: 0 auto;
+	margin-top: 62px;
+}
+
+#center .notepart li {
+	border: 3px solid #c0e2c1;
+	border-radius: 3px;
+	margin-bottom: 5px; 
+	padding: 5px;
+	cursor: pointer;
+}
+
+.notepart li h2 {
+ 	color: black;
+ 	font-size: 0.8em;
+ 	font-weight: bold;
+ }
+
+#right {
+	background-color: white;
+	height: 1000px;
+	overflow: auto;
+}
+
+#right .textname {
+	margin: 60px 0 12px 30px;
+	padding: 0;
+	width: 100%; 
+	height: 42px;
+	font-size: 2em;
+	border: none;
+	outline: none; 
+}
+
+#right .menu1 {
+	height: 32px;
+	background-color: #a0d3a2;
+}
+
+#right .menu1 img {
+	float: left;
+	margin: 9px 0 6px 19px;
+}
+
+#right .menu1 img:first-child {
+	margin-left: 14px;
+}
+
