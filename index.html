@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Meta -->
+        <meta charset="utf-8">
+        <title>个人笔记本</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="css/normalize.css" />
+        <link rel="stylesheet" href="css/style.css" />
+
+        <!-- Fonts  [http://fortawesome.github.io/Font-Awesome/] -->
+        <link rel="stylesheet"
+         href="fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
+    </head>
+    <body>
+
+        <div class="webpage">
+            <div class="menubar">
+                <div class="menubar_header">笔记本</div>
+                <div class="menubar_tool">
+                    <i class="fa fa-plus g_pointer addNotebook"></i>
+                    <i class="fa fa-trash-o deleteNotebook"></i>
+                </div>
+                <div>
+                    <input type="text" class="inputAddNotebook"/>
+                    <ul id="notebooks"></ul>
+                </div>
+            </div>
+            <div class="container">
+                <div class="sidebar">
+                    <div class="sidebar_header">
+                        <span class="title">笔记</span>
+                        <span class="button g_pointer create-essay"><i class="fa fa-pencil-square-o"></i>新建笔记</span>
+                    </div>
+                    <div class="sidebar_content">
+                        <ul id="catalogues"></ul>
+                    </div>
+                </div>
+
+                <div id="content" class="content">
+                </div>
+
+                <div class="editor"  style="display: none">
+                    <input type="text" class="essay-title" name="note_title" placeholder="输入笔记标题">
+                    <div class="editor-container" >
+                        <div class="editor-menu">
+                                <i class="fa fa-bars fa-1x" style="cursor: default;" title="菜单栏"></i>
+                                <i class="fa fa-floppy-o add-essay" title="保存"></i>
+                                <i class="fa fa-caret-square-o-up preview-essay" title="预览"></i>
+                        </div>
+                        <div class="editor-area" contenteditable="true">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-frame">
+            <div class="modal">
+                <div class="modal-inset">
+                    <div class="button modal-close modal-close-action"><i class="fa fa-close"></i></div>
+
+                    <div class="modal-body">
+                        <h3 class="modal-title">Such Modal, Much Animate!</h3>
+                        <p class="modal-content">Nothing groundbreaking, but I hope you enjoyed <br /> the physics for the open/close animation =).</p>
+                        <p class="ps"></p>
+                        <button class="modal-btn modal-close-action">确定</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-overlay"></div>
+
+        <!-- Libraries -->
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/handlebars.js"></script>
+        <script src="https://cdn1.lncld.net/static/js/av-mini-0.5.7.js"></script>
+        <script type="text/javascript" src="js/markdown.min.js"></script>
+
+        <!-- Util -->
+        <script type="text/javascript" src="js/util.js"></script>
+        <!-- Models -->
+        <script type="text/javascript" src="js/model.js"></script>
+
+        <!-- Views -->
+        <script type="text/javascript" src="js/view.js"></script>
+
+        <!-- Main -->
+        <script type="text/javascript" src="js/main.js"></script>
+    </body>
+
+    <script id="notebookNode-template" type="text/x-handlebars-template">
+        <li class="notebook" data-id="{{id}}"><a href="/notebook/#{{id}}">{{title}}({{numberOfNote}})</a></li>
+    </script>
+    <script id="notebook-template" type="text/x-handlebars-template">
+        {{#each notebooks}}
+        <li class="notebook" data-id="{{id}}"><a href="/notebook/#{{id}}">{{title}}({{numberOfNote}})</a></li>
+        {{/each}}
+    </script>
+
+    <script id="emptyCatalogue-template" type="text/x-handlebars-template">
+        <li class="catalogue selected" data-id="">
+            <a href="#">
+                <div class="cite">
+                    <h5>{{title}}</h5>
+                    <p>{{body}}</p>
+                </div>
+            </a>
+        </li>
+    </script>
+    <script id="catalogue-template" type="text/x-handlebars-template">
+        {{#each catalogues}}
+        <li class="catalogue" data-id="{{id}}">
+            <a href="#">
+                <div class="cite">
+                    <h5>{{title}}</h5>
+                    <p>{{short}}</p>
+                </div>
+            </a>
+        </li>
+        {{/each}}
+    </script>
+
+    <script id="essay-template" type="text/x-handlebars-template">
+        <div class="menubar_tool content_close g_pointer"> <i class="fa fa-times deleteEssay"></i></div>
+        <div class="content_header">
+                <h2>{{title}}</h2>
+                <span></span>
+                </div>
+                <div class="content_page">
+                    {{paragraphSplit content}}
+                </div>
+        </div>
+    </script>
+</html>
