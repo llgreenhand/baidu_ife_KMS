@@ -48,8 +48,9 @@ body {
 	height: 27px;
 }
 
-.menu img {
+#left .menu img {
 	float: right;
+	cursor: pointer;
 }
 
 #left ul {
@@ -66,6 +67,19 @@ body {
 	background-color: #303030;
 	color: white;
 } 
+
+#newwrite input {
+	width: 140px;
+	height: 32px;
+	background-color: black;
+	border: none;
+	outline: none; 
+	border-bottom: 1px dashed; 
+}
+
+#left #newwrite:hover {
+	background-color: black;
+}
 
 #center {
 	width: 385px;
@@ -88,6 +102,7 @@ body {
 	height: 36px;
 	width: 130px;
 	background: url(../images/newicon.png) no-repeat top left;
+	cursor: pointer;
 }
 
 #center .newadd img {
